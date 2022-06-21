@@ -15,8 +15,10 @@ const images = [{
     ];
 console.dir(images);
 
-
+ let markup = "";
 images.forEach(({url, alt})=> {
 
-elem.insertAdjacentHTML("beforeend", `<li> <img src = ${url} alt="${alt}" width="640"> </li>`);
+markup += `<li> <img src = ${url} alt="${alt}" width="640"> </li>`;
 });
+console.log(markup);
+elem.insertAdjacentHTML("beforeend", markup);

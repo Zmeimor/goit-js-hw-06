@@ -1,9 +1,12 @@
 const textInput = document.querySelector("#name-input");
 const output = document.querySelector("#name-output");
-output.textContent = "Anonimus";
+
 
 textInput.addEventListener("input", (event) => {
     event.preventDefault();
-    console.log(event.currentTarget.value);
-   output.textContent = event.currentTarget.value; 
+    console.log(event.currentTarget);
+    if (event.currentTarget.value === null)
+    {output.textContent = "Anonimus";
+       } else
+  {output.textContent = event.currentTarget.value}; 
 });
