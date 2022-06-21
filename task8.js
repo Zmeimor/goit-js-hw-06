@@ -12,8 +12,8 @@ formInput.addEventListener('submit', onFormInputSubmit);
 
 
 function onFormInputSubmit (event) {
-    event.preventDefault();
-    
+    // event.preventDefault();
+    console.log(onFormInputSubmit);
     const {email,password} = event.target.elements;
         if (email.value === "" || password.value === "") {
             return alert("Усі поля мають бути заповнені.")
