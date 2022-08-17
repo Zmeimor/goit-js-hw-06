@@ -5,28 +5,29 @@
 // Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
 const formInput = document.querySelector(".login-form");
-const email = document.querySelector(".login-form", "input");
+// const email = document.querySelector(".login-form");
 
 
 formInput.addEventListener('submit', onFormInputSubmit);
 
 
 function onFormInputSubmit (event) {
-    // event.preventDefault();
+    event.preventDefault();
     console.log(onFormInputSubmit);
     const {email,password} = event.target.elements;
         if (email.value === "" || password.value === "") {
             return alert("Усі поля мають бути заповнені.")
         } 
 console.log(`Email: ${email.value}, Password: ${password.value}`)
-window.addEventListener('keydown', reset);
+formInput.reset();
 return;
-}
-
-
-function reset (ev){  
-   if (ev.key === 'Escape') {
-    document.querySelector(".login-form").reset();
-    
-   }  
   }  
+
+
+  window.addEventListener("keydown", ev => {
+
+    if (ev.key === 'Escape') {
+
+        formInput.reset();
+}
+});

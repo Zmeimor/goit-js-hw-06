@@ -5,18 +5,22 @@
 
 const textInput = document.querySelector("#validation-input");
 
-const output = document.querySelector("#name-output");
+//const output = document.querySelector("#name-output");
 
 textInput.addEventListener('blur', onFillinInput);
 
 function onFillinInput (event) {
     let numberText = event.currentTarget.value.length;
     console.log(numberText);
-    textInput.classList.add("invalid");
+    // textInput.classList.add("invalid");
 
     if (event.currentTarget.value.length==textInput.getAttribute("data-length")) {
-        textInput.classList.replace("invalid","valid");
+        textInput.classList.remove("invalid");
+        textInput.classList.add("valid");
         console.log("ura");
+    }     else {
+        textInput.classList.remove("valid");
+        textInput.classList.add("invalid");
     };
 };
 
