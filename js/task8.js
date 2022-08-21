@@ -18,7 +18,7 @@ function onFormInputSubmit (event) {
         if (email.value === "" || password.value === "") {
             return alert("Усі поля мають бути заповнені.")
         } 
-console.log(`Email: ${email.value}, Password: ${password.value}`)
+console.log({email,password})
 formInput.reset();
 return;
   }  
