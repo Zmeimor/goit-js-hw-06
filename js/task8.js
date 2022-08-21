@@ -6,19 +6,29 @@
 
 const formInput = document.querySelector(".login-form");
 // const email = document.querySelector(".login-form");
-
+const inputLogin = formInput.querySelector("[name='email']");
+const inputPassword = formInput.querySelector("[name='password']");
 
 formInput.addEventListener('submit', onFormInputSubmit);
-
+// const resultValues = {
+//     email: null,
+//     password: null,
+//   };
 
 function onFormInputSubmit (event) {
     event.preventDefault();
-    console.log(onFormInputSubmit);
-    const {email,password} = event.target.elements;
-        if (email.value === "" || password.value === "") {
+    // console.log(onFormInputSubmit);
+            if (inputLogin.value === "" || inputPassword.value === "") {
             return alert("Усі поля мають бути заповнені.")
         } 
-console.log({email,password})
+        // resultValues = event.target.elements;
+        const {
+            elements: {email, password}
+          } = event.currentTarget;
+//  resultValues.email = inputLogin.value;
+// resultValues.password = inputPassword.value;
+        console.log(email.value, password.value);      
+// console.log({email,password})
 formInput.reset();
 return;
   }  
