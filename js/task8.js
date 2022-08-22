@@ -21,14 +21,14 @@ function onFormInputSubmit (event) {
             if (inputLogin.value === "" || inputPassword.value === "") {
             return alert("Усі поля мають бути заповнені.")
         } 
-        // resultValues = event.target.elements;
+        resultValues = event.target.elements;
         const {
             elements: {email, password}
           } = event.currentTarget;
-//  resultValues.email = inputLogin.value;
-// resultValues.password = inputPassword.value;
-        console.log(email.value, password.value);      
-// console.log({email,password})
+resultValues.email = inputLogin.value;
+resultValues.password = inputPassword.value;
+        // console.log(email.value, password.value);      
+console.log({email,password})
 formInput.reset();
 return;
   }  
