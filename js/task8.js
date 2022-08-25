@@ -14,7 +14,10 @@ function onFormInputSubmit (event) {
     const isValidForm = [...event.target.elements]
     .filter((elements) => elements.tagName === "INPUT")
     .some((elements)=> elements.value === "");
-      
+      if (isValidForm) {
+        alert("Усі поля мають бути заповнені.")
+        return
+      }
         const {
             elements: {email, password},
           } = event.currentTarget;
